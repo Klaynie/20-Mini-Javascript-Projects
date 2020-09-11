@@ -1,14 +1,3 @@
-<?php
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to start page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: index.html");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Jekyll v4.1.1" />
-    <title>Welcome</title>
+    <title>My First App</title>
 
     <link
       rel="canonical"
@@ -64,20 +53,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <h3 class="masthead-brand">My Employees</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="logout.php">Logout</a>
+            <a class="nav-link" href="login.php">Login</a>
           </nav>
         </div>
       </header>
 
       <main role="main" class="inner cover">
-      <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
-    </div>
-    <p>
-        <a href="index.php" class="btn btn-primary">Access Employees</a><br><br>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
+        <h1 class="cover-heading">Manage your Employees</h1>
+        <p class="lead">
+          Manage your Employees is a simple and beautiful tool to mange your
+          employees.
+        </p>
+        <p class="lead">
+          <a href="login.php" class="btn btn-lg btn-secondary"
+            >Manage Employees</a
+          >
+        </p>
       </main>
 
       <footer class="mastfoot mt-auto">
