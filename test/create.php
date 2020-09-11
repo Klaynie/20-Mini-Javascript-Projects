@@ -1,16 +1,11 @@
 <?php
-// Authentication
-require 'vendor/autoload.php';
-use Auth0\SDK\Auth0;
-
-$auth0 = new Auth0([
-  'domain' => 'klayne.eu.auth0.com',
-  'client_id' => 'g4SmvxXXFlZjBcssG77HWLEryr41G1yp',
-  'client_secret' => 'YOUR_CLIENT_SECRET',
-  'redirect_uri' => 'http://localhost:3000/',
-  'scope' => 'openid profile email',
-]);
-
+// Initialize the session
+session_start();
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 // Include config file
 require_once "config.php";
  
