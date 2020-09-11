@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="buttons">
-        <a href="welcome.php" class="btn btn-primary">Back to Welcome Page</a>
+        <a href="welcome.php" class="btn btn-primary">Back to Welcome Page</a><br><br>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </div>
