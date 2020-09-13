@@ -53,9 +53,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           font-size: 3.5rem;
         }
       }
+
+      body {
+    background-image: url('chalk-4829602_1920.jpg');
+    }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet" />
+    
   </head>
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">

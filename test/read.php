@@ -67,6 +67,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             width: 500px;
             margin: 0 auto;
         }
+        
     </style>
 </head>
 <body>

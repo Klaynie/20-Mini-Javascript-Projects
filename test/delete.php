@@ -56,6 +56,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             width: 500px;
             margin: 0 auto;
         }
+    
     </style>
 </head>
 <body>
