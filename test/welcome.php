@@ -55,8 +55,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       }
 
       body {
-    background-image: url('chalk-4829602_1920.jpg');
-    }
+        background-image: url('chalk-4829602_1920.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center; 
+      }
 
     </style>
     <!-- Custom styles for this template -->
