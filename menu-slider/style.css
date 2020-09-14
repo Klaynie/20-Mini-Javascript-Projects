@@ -2,8 +2,8 @@
 
 :root {
   --modal-duration: 350ms;
-  --primary-color: #30336b;
-  --secondary-color: #be2edd;
+  --primary-color: #1017a5;
+  --secondary-color: #2e97dd;
   --nav-width: 200px;
 }
 
@@ -153,7 +153,6 @@ button:focus {
 
 .modal-header h3 {
   margin: 0;
-  border-bottom: 1px solid #333;
 }
 
 .modal-content {
@@ -169,7 +168,7 @@ button:focus {
 }
 
 .modal-form .form-input {
-  padding: 8px;
+  padding: 12px;
   width: 100%;
 }
 
@@ -179,6 +178,10 @@ button:focus {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.modal-form .submit-btn {
+  width: 100%;
 }
 
 @keyframes modalopen {
