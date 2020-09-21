@@ -299,7 +299,7 @@ function keyUp(e) {
 
 // Keypress for starting game
 function startGame(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && startOfGame) {
     startOfGame = false;
     globalSpeed = 4;
     ball.speed = globalSpeed;
