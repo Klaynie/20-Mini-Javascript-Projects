@@ -88,11 +88,8 @@ function generateColorGradiant(block) {
 // Draw ball on canvas
 function drawBall() {
   ctx.beginPath();
-  ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
-  const grd = ctx.createRadialGradient(ball.x, ball.y, 0, ball.x + ball.size, ball.y + ball.size, 2 * Math.PI * ball.size);
-  grd.addColorStop(0, "white");
-  grd.addColorStop(0.3, "black");
-  ctx.fillStyle = grd;
+  ctx.rect(ball.x, ball.y, ball.size, ball.size);
+  ctx.fillStyle = "black";
   ctx.fill();
   ctx.closePath();
 }
