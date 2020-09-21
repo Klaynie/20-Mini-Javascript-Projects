@@ -1,5 +1,6 @@
 const msgEl = document.getElementById('msg');
-
+const numberEl = document.getElementById('number');
+const form = document.getElementById('form');
 const randomNum = getRandomNumber();
 
 // Log random Number to console to check the result
@@ -48,7 +49,7 @@ function checkNumber(msg) {
   if (num === randomNum) {
     document.body.innerHTML = `
       <h2>🎉Congrats! You have guessed the number!🎉<br><br>
-      🎊It was ${num}!🎊</h2>
+      🎊It was ${num}🎊</h2>
       <button class="play-again" id="play-again">Play Again</button>
     `;
   } else if (num > randomNum) {
@@ -73,4 +74,14 @@ document.body.addEventListener('click', (e) => {
   if (e.target.id == 'play-again') {
     window.location.reload();
   }
+});
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const msg = numberEl.value;
+  numberEl.value = '';
+
+  writeMessage(msg);
+  checkNumber(msg);
 });

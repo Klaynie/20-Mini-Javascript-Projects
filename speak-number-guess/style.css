@@ -27,12 +27,14 @@ p {
 
 .play-again {
   cursor: pointer;
-  padding: 8px 15px;
-  border: 0;
-  background: #f4f4f4;
-  border-radius: 5px;
+  background-color: #db9334;
+  border: 2px solid #db9334;
+  border-radius: 4px;
+  color: #fff;
   margin-top: 10px;
-  transform: scale(1.5);
+  font-size: 18px;
+  padding: 10px;
+  width: 300px;
 }
 
 .msg {
@@ -46,4 +48,26 @@ p {
   font-size: 30px;
   margin: 20px;
   padding: 10px;
+}
+
+.form input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.form-button {
+  cursor: pointer;
+  background-color: #db9334;
+  border: 2px solid #db9334;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width: 300px;
 }
