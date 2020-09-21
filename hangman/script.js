@@ -7,12 +7,23 @@ const finalMessage = document.getElementById('final-message');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['application', 'programming', 'interface', 'wizard'];
-
-let selectedWord = words[Math.floor(Math.random() * words.length)];
+let selectedWord = 'placeholder';
 
 const correctLetters = [];
 const wrongLetters = [];
+
+// Get random word from database
+async function getRandomWord() {
+  await fetch('http://klaynie.rf.gd/typing-game/call.php', {
+    method: 'get',
+  }).then((res) => res.json())
+    .then(async (data) => {
+      randomWord = data[1];
+      selectedWord = randomWord;
+    });
+
+  displayWord();
+}
 
 // Show hidden word
 function displayWord() {
@@ -57,7 +68,7 @@ function updateWrongLettersEl() {
 
   // Check if lost
   if (wrongLetters.length === figureParts.length) {
-    finalMessage.innerText = 'Unfortunately you lost. 😕';
+    finalMessage.innerText = `Unfortunately you lost. 😕\nThe word was "${selectedWord}"`;
     popup.style.display = 'flex';
   }
 }
@@ -102,7 +113,7 @@ playAgainBtn.addEventListener('click', () => {
   correctLetters.splice(0);
   wrongLetters.splice(0);
 
-  selectedWord = words[Math.floor(Math.random() * words.length)];
+  getRandomWord();
 
   displayWord();
 
@@ -111,4 +122,4 @@ playAgainBtn.addEventListener('click', () => {
   popup.style.display = 'none';
 });
 
-displayWord();
+getRandomWord();
