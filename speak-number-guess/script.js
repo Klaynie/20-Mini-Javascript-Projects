@@ -6,20 +6,20 @@ const randomNum = getRandomNumber();
 // Log random Number to console to check the result
 console.log('Number:', randomNum);
 
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+// window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-let recognition = new window.SpeechRecognition();
+// let recognition = new window.SpeechRecognition();
 
-// Start recognition and game
-recognition.start();
+// // Start recognition and game
+// recognition.start();
 
-// Capture user speak
-function onSpeak(e) {
-  const msg = e.results[0][0].transcript;
+// // Capture user speak
+// function onSpeak(e) {
+//   const msg = e.results[0][0].transcript;
 
-  writeMessage(msg);
-  checkNumber(msg);
-}
+//   writeMessage(msg);
+//   checkNumber(msg);
+// }
 
 // Write what user speaks
 function writeMessage(msg) {
@@ -65,10 +65,10 @@ function getRandomNumber() {
 }
 
 // Speak result
-recognition.addEventListener('result', onSpeak);
+// recognition.addEventListener('result', onSpeak);
 
 // End SR service
-recognition.addEventListener('end', () => recognition.start());
+// recognition.addEventListener('end', () => recognition.start());
 
 document.body.addEventListener('click', (e) => {
   if (e.target.id == 'play-again') {
