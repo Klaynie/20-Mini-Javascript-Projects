@@ -30,13 +30,7 @@ function displayWord() {
   wordEl.innerHTML = `
     ${selectedWord
       .split('')
-      .map(
-        (letter) => `
-        <span class="letter">
-          ${correctLetters.includes(letter) ? letter : ''}
-        </span>
-      `
-      )
+      .map(checkLetters)
       .join('')}
   `;
 
@@ -46,6 +40,21 @@ function displayWord() {
     finalMessage.innerText = 'Congratulations You won! 😃';
     popup.style.display = 'flex';
   }
+}
+
+// Check letters
+function checkLetters(letter) {
+  let returnLetter = '';
+  if (correctLetters.includes(letter)) {
+    returnLetter = letter;
+  } else if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+    returnLetter = "*";
+  }
+  return `
+  <span class="letter">
+    ${returnLetter}
+  </span>
+  `
 }
 
 // Update the wrong letters
