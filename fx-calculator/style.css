@@ -31,8 +31,8 @@ p {
   background: var(--primary-color);
   cursor: pointer;
   border-radius: 5px;
-  font-size: 12px;
-  padding: 5px 12px;
+  font-size: 30px;
+  padding: 5px 23px;
 }
 
 .money-img {

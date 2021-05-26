@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exchange Rate Calculator</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <img src="img/money.png" alt="" class="money-img" />
     <h1>Exchange Rate Calculator</h1>
     <p>Choose the currency and the amount to get the exchange rate</p>
     <div class="container">
-      <div class="currency">
-        <select id="currency-one">
+        <div class="currency">
+            <select id="currency-one">
           <option value="AED">AED</option>
           <option value="ARS">ARS</option>
           <option value="AUD">AUD</option>
@@ -66,16 +68,16 @@
           <option value="VND">VND</option>
           <option value="ZAR">ZAR</option>
         </select>
-        <input type="number" id="amount-one" placeholder="0" value="1" />
-      </div>
+            <input type="number" id="amount-one" placeholder="0" value="1" />
+        </div>
 
-      <div class="swap-rate-container">
-        <button class="btn" id="swap">Swap</button>
-        <div class="rate" id="rate"></div>
-      </div>
+        <div class="swap-rate-container">
+            <button class="btn" id="swap">⇅</button>
+            <div class="rate" id="rate"></div>
+        </div>
 
-      <div class="currency">
-        <select id="currency-two">
+        <div class="currency">
+            <select id="currency-two">
           <option value="AED">AED</option>
           <option value="ARS">ARS</option>
           <option value="AUD">AUD</option>
@@ -129,9 +131,10 @@
           <option value="VND">VND</option>
           <option value="ZAR">ZAR</option>
         </select>
-        <input type="text" id="amount-two" placeholder="0" />
-      </div>
+            <input type="text" id="amount-two" placeholder="0" />
+        </div>
     </div>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
