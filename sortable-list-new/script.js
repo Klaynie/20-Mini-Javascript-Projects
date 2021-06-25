@@ -1,31 +1,36 @@
 const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
+const paragraph = document.getElementById('description');
 
-const richestPeople = [
-  'Jeff Bezos',
-  'Bill Gates',
-  'Warren Buffett',
-  'Bernard Arnault',
-  'Carlos Slim Helu',
-  'Amancio Ortega',
-  'Larry Ellison',
-  'Mark Zuckerberg',
-  'Michael Bloomberg',
-  'Larry Page'
-];
-
-// Store listitems
-
+// Init variables
+let listValues;
+var richestPeople = [];
 const listItems = [];
-
 let dragStartIndex;
 
-createList();
+// Get random word from database
+function initializeDOM() {
+  fetch('http://klaynie.rf.gd/sortable-list-new/call.php', {
+      method: 'get',
+    }).then((res) => res.json())
+    .then(async(data) => {
+      listValues = data;
+      addDescriptionToDOM(listValues);
+      richestPeople = listValues.slice(1, 11);
+      createList(richestPeople);
+    });
+}
+
+function addDescriptionToDOM(listValues) {
+  const instructions = listValues[0];
+  const description = `Drag and drop the "${instructions}" into their corresponding spots.`;
+  paragraph.innerHTML = description;
+}
 
 // Insert list items into DOM
-function createList() {
+function createList(richestPeople) {
   [...richestPeople]
-    .map(a => ({ value: a, sort: Math.random() }))
+  .map(a => ({ value: a, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(a => a.value)
     .forEach((person, index) => {
@@ -117,4 +122,5 @@ function addEventListener() {
   });
 }
 
+initializeDOM();
 check.addEventListener('click', checkOrder);
