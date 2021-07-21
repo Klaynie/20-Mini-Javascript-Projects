@@ -65,3 +65,43 @@ p {
   display: flex;
   margin: 20px 0 0;
 }
+
+
+/* unvisited link */
+
+a:link {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px 0 0;
+  color: #111;
+}
+
+
+/* visited link */
+
+a:visited {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px 0 0;
+  color: #111;
+}
+
+
+/* mouse over link */
+
+a:hover {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px 0 0;
+  color: #111;
+}
+
+
+/* selected link */
+
+a:active {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px 0 0;
+  color: #111;
+}
